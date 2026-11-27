@@ -88,7 +88,7 @@ Open the local Streamlit URL shown in the terminal, upload a PDF, click **Proces
 
 - Reprocessing a file with the same filename replaces that document's stored chunks.
 - Only text-based, unencrypted PDFs are supported. Scanned PDFs without an embedded text layer will not produce chunks.
-- Retrieval uses a distance cutoff of `0.9`; if no chunk is close enough, the app reports that it has no information in the uploaded documents.
+- Retrieval searches all documents stored in the database, including documents indexed in earlier Streamlit sessions. If no sufficiently relevant chunk is found, the app reports that it could not find an answer in the stored documents.
 - Documents remain in the database between Streamlit sessions. To remove all indexed content, clear the `documents` table; its related chunks are deleted automatically through the foreign-key cascade.
 - Documents can be deleted in the sidebar.Anyone using the app can delete anything.
 ## Troubleshooting
