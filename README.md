@@ -73,17 +73,17 @@ Open the local Streamlit URL shown in the terminal, upload a PDF, click **Proces
 
 ## Project structure
 
-| File | Purpose |
-| --- | --- |
-| `web_app.py` | Streamlit upload and chat interface. |
-| `main.py` | Coordinates ingestion, retrieval, prompt construction, and answer generation. |
-| `Document_work.py` | Extracts PDF text and splits it into chunks. |
-| `Embeddings_work.py` | Creates document and query embeddings. |
-| `Building_Model.py` | Builds the grounded RAG prompt and calls Ollama. |
-| `db.py` | Loads database configuration and opens PostgreSQL connections. |
-| `schema.sql` | Database tables, pgvector extension, and indexes. |
-| `calibrate.py` | Simple script for inspecting retrieval distances. |
-
+| File                 | Purpose                                                                       |
+|----------------------|-------------------------------------------------------------------------------|
+| `web_app.py`         | Streamlit upload and chat interface.                                          |
+| `main.py`            | Coordinates ingestion, retrieval, prompt construction, and answer generation. |
+| `Document_work.py`   | Extracts PDF text and splits it into chunks.                                  |
+| `Embeddings_work.py` | Creates document and query embeddings.                                        |
+| `Building_Model.py`  | Builds the grounded RAG prompt and calls Ollama.                              |
+| `db.py`              | Loads database configuration and opens PostgreSQL connections.                |
+| `schema.sql`         | Database tables, pgvector extension, and indexes.                             |
+| `retrieve.py`        | Retrieves the nearest stored chunks using cosine distance                     |
+| `store.py`           | Stores,lists,replaces,and deletes indexed documents.                          |
 ## Notes
 
 - Reprocessing a file with the same filename replaces that document's stored chunks.
