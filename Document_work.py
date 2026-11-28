@@ -17,7 +17,6 @@ def extract_chunks(source):
             page_text=page.extract_text()#pull the readable words and strings off that specific page.
             if page_text:
                 full_text+=f"[Page {page_num}]{page_text}\n\n"
-        print(full_text)
         if not full_text.strip():
             print("Empty text")
             return []
